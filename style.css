@@ -1,0 +1,90 @@
+* {
+  font-family: cursive;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+
+.hide {
+  display: none;
+}
+
+img {
+  width: 70px;
+  border-radius: 20%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;
+}
+
+h2 {
+  position: relative;
+  z-index: 10000;
+}
+
+.p1,
+.p2 {
+  padding: 18px;
+  border-radius: 2px;
+  text-align: center;
+  box-shadow: 10px 10px 10px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.p1 {
+  background-color: black;
+  color: white;
+  transition: all 1.5s;
+}
+
+.p1:hover {
+  color: black;
+}
+
+.p1:hover::after {
+  width: 1000px;
+  height: 1000px;
+}
+
+.p1::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  background-color: white;
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: width 1.5s, height 1.5s;
+}
+
+.p2 {
+  transition: all 1.5s;
+}
+.p2::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  background-color: black;
+  position: absolute;
+  left: var(--x2);
+  top: var(--y2);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: width 1.5s, height 1.5s;
+}
+.p2:hover::after {
+  width: 1000px;
+  height: 1000px;
+}
+.p2:hover {
+  color: white;
+}
